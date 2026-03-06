@@ -19,5 +19,5 @@ class BasePage:
     def get_text(self, locator):
         return self.wait.until(EC.visibility_of_element_located(locator)).text
     
-    def find_element(self, locator):
-        return self.wait.until(EC.visibility_of_element_located(locator))
+    def find_elements(self, locator):
+        return self.wait.until(EC.presence_of_all_elements_located(locator))

@@ -1,18 +1,18 @@
 
 from selenium.webdriver.common.by import By
-
-from pages.base_page import BasePage
+from .base_page import BasePage
 
 class CartPage(BasePage):
-    cart_item = (By.CLASS_NAME, "cart_item")
-    inventory_item_name = (By.CLASS_NAME, "inventory_item_name")
+    
+    item_name = (By.CLASS_NAME, "inventory_item_name")
     checkout_button = (By.ID, "checkout")
+    cart_items = (By.CLASS_NAME, "cart_item")
 
     def get_item_name(self):
         product_names = []
-        products = self.find_elements(self.cart_item)
+        products = self.find_elements(self.cart_items)
         for product in products:
-            product_names.append(self.get_text(self.inventory_item_name))
+            product_names.append(product.find_element(By.CLASS_NAME, "inventory_item_name").text)
         return product_names
     
     def checkout_cart(self):
