@@ -1,22 +1,20 @@
 from selenium.webdriver.common.by import By
+from .base_page import BasePage
 
 
-class LoginPage:
-    def __init__(self, driver):
-        self.driver = driver
-        self.username_input =(By.ID, "user-name")
-        self.password_input = (By.ID, "password")
-        self.login_button = (By.ID, "login-button")
+class LoginPage(BasePage):
+    username_input =(By.ID, "user-name")
+    password_input = (By.ID, "password")
+    login_button = (By.ID, "login-button")
+    error_message = (By.XPATH, "//h3[@data-test = 'error']")
     
     def open(self):
-        self.driver.get("https://www.saucedemo.com/")
+        super().open("https://www.saucedemo.com/")
 
     def enter_login_credentials(self, username, password):
-        self.driver.find_element(*self.username_input).send_keys(username)
-        self.driver.find_element(*self.password_input).send_keys(password)
-        self.driver.find_element(*self.login_button).click()
+        self.type(self.username_input, username)
+        self.type(self.password_input, password)
+        self.click(self.login_button)
 
     def error_handler(self):
-        return self.driver.find_element(By.XPATH, "//h3[@data-test = 'error']").text
-
-    
+        return self.get_text(self.error_message)
