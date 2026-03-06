@@ -1,0 +1,30 @@
+{
+  "valid_credentials": [
+    {
+      "user_name": "standard_user",
+      "password": "secret_sauce",
+      "first_name": "Anas",
+      "last_name": "Alhajri",
+      "postal_code": "12345",
+      "product_name": "Sauce Labs Backpack"
+    },
+    {
+      "user_name": "standard_user",
+      "password": "secret_sauce",
+      "first_name": "insane",
+      "last_name": "bashari",
+      "postal_code": "12345",
+      "product_name": "Sauce Labs Bike Light"
+    }
+  ],
+  "invalid_credentials": [
+    {
+      "user_name": "invalid_user",
+      "password": "invalid_password"
+    },
+    {
+      "user_name": "standard_user",
+      "password": "invalid_password"
+    }
+  ]
+}
