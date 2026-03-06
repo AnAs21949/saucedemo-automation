@@ -1,4 +1,4 @@
-selenium 
+selenium
 pytest
 pytest-html
 webdriver-manager
