@@ -1,8 +1,7 @@
 from selenium.webdriver.common.by import By
 from .base_page import BasePage
-import json
-with open ("data/config.json") as f:
-    config = json.load(f)
+from utils.config_loader import config
+
 
 class LoginPage(BasePage):
     username_input = (By.ID, "user-name")

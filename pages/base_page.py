@@ -1,10 +1,9 @@
 
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-import json
 
-with open ("data/config.json") as f:
-    config = json.load(f)
+from utils.config_loader import config
+
 
 class BasePage:
     def __init__(self, driver):
