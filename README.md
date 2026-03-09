@@ -44,3 +44,5 @@ Run a specific tests: "pytest tests/file_name -v -s"
 ## How to generate HTML report
 
 "pytest -v --html=reports/report.html --self-contained-html" to generate the html report inside the reports folder
+
+![alt text](screencapture-file-C-Users-Anas-Documents-saucedemo-automation-reports-report2-html-2026-03-09-14_17_45.png)
