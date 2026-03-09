@@ -13,9 +13,9 @@ class LoginPage(BasePage):
         super().open(config["base_url"])
 
     def enter_login_credentials(self, username, password):
-        self.type(self.username_input, username)
-        self.type(self.password_input, password)
+        self.clear_and_type(self.username_input, username)
+        self.clear_and_type(self.password_input, password)
         self.click(self.login_button)
 
-    def error_handler(self):
+    def get_error_message(self):
         return self.get_text(self.error_message)
